@@ -6,7 +6,7 @@
 		<meta charset='utf-8'>
 		<script src='//www.w3.org/Tools/respec/respec-w3c-common'
 		async class='remove'></script>
-		 <link rel="stylesheet" type="text/css" href="local.css" />
+	
 		<script class='remove'>
 			var respecConfig = {
 				specStatus: "unofficial",
@@ -24,6 +24,37 @@
 				}
 			};
 		</script>
+		<style>
+		/* use tab-like headers for syntax examples */
+div.exampleheader {
+  font-size: 90%;
+  float: left;
+  background: #F9F9F9;
+  color: #2F6FAB;
+  border: 1px dashed #2F6FAB;
+  border-bottom: 0px;
+  padding-top: 2px;
+}
+
+div.exampleheader span.exampleheader {
+  background: #F9F9F9;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 3px;
+  padding-top: 0px;
+}
+
+/* Also copy MediaWiki style here, so it will not look different when exported */
+div.fssyntax pre, div.rdfxml pre, div.owlxml pre, div.turtle pre, div.manchester pre  {
+  background-color: #F9F9F9;
+  border: 1px dashed #2F6FAB;
+  color: black;
+  line-height: 1.1em;
+  padding: 1em;
+  clear: both;
+  margin-left: 0em;
+}</style>
 	</head>
 	<body>
 		<section id='abstract'>
