@@ -71,101 +71,68 @@ div.fssyntax pre, div.rdfxml pre, div.owlxml pre, div.turtle pre, div.manchester
 			<!-- taken from http://www.w3.org/2014/data-shapes/charter -->
 			<section>
 				<h1>Scope and Motivation</h1>
-				<p>
-					One motivation for SHACL is <em>Application Integration</em>, where different software components, potentially maintained by different organizations, need to function together smoothly. As an everyday example, imagine an international company with a dozen divisions, each providing a feed of their Human Resources data to authorized users. Different divisions might use different software to produce their feeds, and there might be many distinct applications which consume the data, ranging from an employee phone book to a hiring-compliance monitoring system. 
-				</p>
-				<p>
-					While systems like this are built and maintained around the world today, their complexity often becomes a problem. Not only are the systems expensive and sometimes unpleasant to maintain, but changing data fields and adding new applications can grow to be practically impossible. An "RDF Data Shapes" standard would help manage the complexity, greatly reducing the cost and hassle, by separating components while still allowing them to work together.
-				</p>
-				<p>
-					Specifically, in this example, SHACL would allow: 
-					<ul>
-						<li>Developers of each data-consuming application could define the shapes their software needs to find in each feed, in order to work properly, with optional elements it can use to work bette</li>
-						<li>When these developers want to modify their software, they can define new shapes they require.</li>
-						<li>Management can offer guidance in the relative priorities of outputting particular shapes, based on the application(s) that use them. There might be target goals and deadlines.</li>
-						<li>Developers of data-providing systems can read the shape definitions (and possibly related RDF Vocabulary definitions) to learn what they need to provide.</li>
-						<li>Data providers can also validate their data against the definitions, to see if they are producing the right information. (Of course, this doesn't ensure the data is correct, just that it's the right shape.) </li>
-						<li>Data consumers can validate incoming data against the expected shapes, to make sure they are getting the kind of data they were expecting. This can be done manually from time to time, or automatically on all data. This kind of validation is particularly important if producers and consumers keep updating their software to use new shapes to meet changing requirements. </li>
-						<li>Intermediate systems can, in some cases, be written to convert data written to match one shape into data which matches a different shape. </li>
-						<li>Some systems may be able to automatically generate user interface elements (e.g. HTML forms) and/or data bindings based on shapes.</li>
-						<li>There may be optimizations in data processing possible when the data is known to conform to a single declared shape. </li>
-					</ul>
-				</p>
-				<p>
-					In all cases, the <em>semantics</em> of the data are determined by RDF and the vocabularies specified by the shape, so if the shapes match, the systems can reasonably be expected to interoperate correctly. 
-				</p>
-				<p>
-					While SHACL is expected to have immediate everyday utility, as illustrated above, it has even wider potential applicability, ranging in scale. At the large end, SHACL might be used by loosely-knit communities, where data is provided by organizations which are not under any central authority, such as charities and researchers around the world concerned with quality-of-life measures. At the small end, SHACL might be used within a mobile application environment to provide interoperability among independent sensor modules and tools for analyzing and acting on sensor results. The common thread is that SHACL allow a loose coupling, where independently maintained elements of an overall system can reliably and comfortably interoperate. 
-				</p>
+				<p>TBD</p>
 			</section>
 
 			<section>
 				<h1>Organization of this Document</h1>
 				<p>This document is organized as follows:</p>
 				<ul>
-					<li><b><a href="#usecases" title="Use Cases">Use Cases</a></b> are
-						used to capture and model functional requirements. Use cases
-						describe the system’s behavior under various conditions [[COCKBURN-2000]],
-						cataloging who does what with the system, for what purpose, but
-						without concern for system design or implementation. Each use case is identified by a
-						reference number to aid cross-reference from other documentation. A variety of styles may be used to capture use cases,
-						from a simple narrative to a structured description with actors,
-						pre/post conditions, and non-functional requirements
-						raised by the use case.</li>
-					</ul>
-
-		<!--<ul>
-			<li><b><a href="#userstories" title="User Stories">User Stories</a></b>
-				capture statements about system requirements written from a user
-				or application perspective. They are typically lightweight and
-				informal and can run from one line to a paragraph or two
-				(sometimes described as an 'epic') [[xyz]]. 
-				This document redacts a number of user stories around the theme of read/writeable linked data.
-				Analysis of each user story reveals a
-				number of (functional) use cases and other non-functional
-				requirements. See <em>Device API Access Control Use Cases and Requirements</em> [[xyz]] for a good example
-				of user stories and their analysis.</li>
-		</ul>
-		<ul>
-			<li><b><a href="#usecases" title="Use Cases">Use Cases</a></b> are
-				used to capture and model functional requirements. Use cases
-				describe the system’s behavior under various conditions [[xyz]],
-				cataloging who does what with the system, for what purpose, but
-				without concern for system design or implementation. Each use case is identified by a
-				reference number to aid cross-reference from other documentation;
-				use case indexing in this document is based on rdb2rdf
-				use cases [[xyz]]. A variety of styles may be used to capture use cases,
-				from a simple narrative to a structured description with actors,
-				pre/post conditions, step-by-step behaviors (as in <em>POWDER:
-				Use Cases and Requirements</em> [[xyz]]), and non-functional requirements
-				raised by the use case.</li>
-			</ul>-->
-			<ul>
-				<li><b><a href="#requirements" title="Requirements">Requirements</a></b>
-					list functional and non-functional or quality requirements, and the use cases
-					they may be derived from/related to. This approach is exemplified in the <em>Use Cases and Requirements for the Data
-					Catalog Vocabulary</em> [[DCAT-UCR]].</li>
+					<li><b><a href="#policytypes" title="Policy Types">Policy Types</a></b> etc.</li>
+					<li><b><a href="#actions" title="Actions">Actions</a></b> etc.</li>
+					<li><b><a href="#constraints" title="Constraints">Policy Types</a></b> etc.</li>
+					<li><b><a href="#roles" title="Roles of Party">Roles of a Party</a></b> etc.</li>
+					<li><b><a href="#..." title="...">...</a></b> etc.</li>
 				</ul>
 			</section>
 
 			<section>
-				<h1 id="userstories">Use Cases</h1>
-				<!-- User Story 1 -->
-				<section>
-					<h2><dfn>UC1</dfn>: Model validation</h2>
-					<p>
-			    There is a general need to validate that the instance data matches the models that have been defined in RDFS or OWL. The primary validation requirement is to ensure that the appropriate information is given for each property (or class) in the model. As examples, one could require that each property must have a domain, or that classes must be explicitly stated in the instance data. Input to this case is the RDF representation of an RDFS (or OWL) ontology.</p>
-					<!--<section>
-						<h3>Summary:</h3>-->
-						<p><strong>Summary:</strong> Requires the ability to check whether certain information is given/available for a property or class.					</p>
-					<!--</section>
-					<section>
-					  <h3>Related Requirements:</h3>
-						--><p> <strong>Related Requirements:</strong> 
-							<a>R6.2</a>
-						</p>
-					
-				</section>
+				<h1 id="odrl-ld">ODRL Linked Data Profile</h1>
+				
+				<section id="namespaces">
+				<h2>Namespaces</h2>
+				<p>
+					The SHACL system vocabulary is available as a <a href="shacl.shacl.ttl">SHACL Turtle File</a>.
+					<span class="todo">Currently contains slight differences from this spec.</span> 
+				</p>
+				
+				<p>
+					Within this document, the following namespace prefix bindings are used:
+				</p>
+				<table class="term-table" border="1" cellpadding="5">
+					<tr>
+						<th>Prefix</th>
+						<th>Namespace</th>
+					</tr>
+					<tr>
+						<td><code>rdf:</code></td>
+						<td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td>
+					</tr>
+					<tr>
+						<td><code>rdfs:</code></td>
+						<td><code>http://www.w3.org/2000/01/rdf-schema#</code></td>
+					</tr>
+					<tr>
+						<td><code>sh:</code></td>
+						<td><code>http://www.w3.org/ns/shacl#</code></td>
+					</tr>
+					<tr>
+						<td><code>xsd:</code></td>
+						<td><code>http://www.w3.org/2001/XMLSchema#</code></td>
+					</tr>
+					<tr>
+						<td><code>ex:</code></td>
+						<td><code>http://example.com/ns#</code></td>
+					</tr>
+					<tr>
+						<td><code>schema:</code></td>
+						<td><code>http://schema.org/</code></td>
+					</tr>
+				</table>
+				<div class="turtle"><div class="exampleheader"><span class="exampleheader"><strong>Example</strong></span></div>
+						<pre>fibo-be-oac-cpty:hasControllingInterestParty min 0 fibo-be-oac-cctl:VotingShareholder</pre>
+					</div>
+			</section>
 </section>
 				
 		<section>
