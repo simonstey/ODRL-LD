@@ -56,18 +56,36 @@ div.fssyntax pre, div.rdfxml pre, div.owlxml pre, div.turtle pre, div.manchester
   margin-left: 0em;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: #fff;
+  margin: .5em 0 2em 0;
+  text-align: left;
+  box-shadow: 1px 1px 0 #fff;
+  font-size: 95%; }
+
+tr {
+  border: 1px solid #ccc; }
+
+th, td {
+  padding: 3px 15px; }
+
+td {
+  vertical-align: top; }
+  td.col-date {
+    width: 70px; }
+
 th {
-				text-align: left;
-			}
-			table.rule { background-color: #EBEBE0; }
-			table.rule td { text-align: center; }
-			td.up { border-bottom:1px solid black; }
-			
-						.term-table {
-				border-collapse: collapse;
-				border-color: #000000;
-				margin: 16px;
-			}
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background: rgba(94, 98, 102, 0.2); }
+
+tbody.side-headers th {
+  background: #F4F0E7; }
+
+tbody.side-headers tr:nth-child(2n+1) {
+  background: #f7f7f7; }
 </style>
 	</head>
 	<body>
@@ -113,7 +131,7 @@ th {
 				<p>
 					Within this document, the following namespace prefix bindings are used:
 				</p>
-				<table class="term-table" border="1" cellpadding="5">
+				<table border="1" cellpadding="5">
 					<tr>
 						<th>Prefix</th>
 						<th>Namespace</th>
