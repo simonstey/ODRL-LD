@@ -11,10 +11,6 @@ display: table-cell;
 .IUexample { margin-left: 3em; padding-left:1em; border: 3px solid #77f; background-color: #bbf; font-size: small; }
 
 .note { background-color: #fff8dc; font-size: small; }
-.example a:link {text-decoration:none;}
-.example a:visited {text-decoration:none;}
-.example a:hover {text-decoration:underline;}
-.example a:active {text-decoration:underline;}
 
 a.rulelink:link {text-decoration:none;}
 a.rulelink:visited {text-decoration:none;}
@@ -78,8 +74,6 @@ table#x { border-collapse:collapse; }
     background-color: #ff0;
 }
 
-.example { display: inline-block; }
-
 /* use tab-like headers for syntax examples */
 div.exampleheader {
   font-size: 90%;
@@ -110,3 +104,10 @@ div.fssyntax pre, div.rdfxml pre, div.owlxml pre, div.turtle pre, div.manchester
   clear: both;
   margin-left: 0em;
 }
+
+th {
+				text-align: left;
+			}
+			table.rule { background-color: #EBEBE0; }
+			table.rule td { text-align: center; }
+			td.up { border-bottom:1px solid black; }
